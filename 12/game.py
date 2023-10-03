@@ -33,13 +33,13 @@ while not done:
         if event.type == QUIT:
             done = True
         if event.type == KEYDOWN:
-            if event.key == K_w:
+            if event.key == K_w and position[1] > 0:
                 position[1] -= 50
-            if event.key == K_a:
+            if event.key == K_a and position[0] > 0:
                 position[0] -= 50
-            if event.key == K_s:
+            if event.key == K_s and position[1] < height - 50:
                 position[1] += 50
-            if event.key == K_d:
+            if event.key == K_d and position[0] < width - 50:
                 position[0] += 50
     
     for index, food in enumerate(foods):
@@ -54,7 +54,7 @@ while not done:
         
     screen.blit(player, position)
     
-    
+    print(1)
     pygame.display.flip()
 
 pygame.quit()
